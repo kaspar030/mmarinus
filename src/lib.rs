@@ -88,7 +88,7 @@ use std::os::unix::io::{AsRawFd, RawFd};
 use std::path::Path;
 use std::slice::{from_raw_parts, from_raw_parts_mut};
 
-mod sealed {
+pub mod sealed {
     pub trait Stage {}
 
     pub trait Type {}
@@ -104,7 +104,7 @@ mod sealed {
     pub trait Executable: Known {}
 }
 
-use sealed::*;
+pub use sealed::*;
 
 /// Permissions for a mapping
 pub mod perms {
